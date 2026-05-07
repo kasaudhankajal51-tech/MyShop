@@ -174,7 +174,6 @@ export default function AdminProducts() {
       isFeatured: product.isFeatured || false,
       isBestSeller: product.isBestSeller || false,
       isNewArrival: product.isNewArrival || false,
-      isNewArrival: product.isNewArrival || false,
       image: product.image || '',
       images: product.images || [],
     });
