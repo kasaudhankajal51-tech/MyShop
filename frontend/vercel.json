@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://your-backend-url.com/api/:path*"
+      "destination": "https://myshop-834z.onrender.com/api/:path*"
     },
     {
       "source": "/uploads/:path*",
-      "destination": "https://your-backend-url.com/uploads/:path*"
+      "destination": "https://myshop-834z.onrender.com/uploads/:path*"
     },
     {
       "source": "/(.*)",
