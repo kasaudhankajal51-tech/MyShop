@@ -1,0 +1,7 @@
+{
+  "allUsers": 6,
+  "retailUsers": 2,
+  "wholesaleUsers": 4,
+  "undefinedAccountType": 0,
+  "nullAccountType": 0
+}

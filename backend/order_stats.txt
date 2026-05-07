@@ -1,0 +1,8 @@
+
+--- Order Stats ---
+Total Orders: 2
+Retail Orders: 0
+Wholesale Orders: 0
+Missing orderType: 2
+Null orderType: 2
+Other orderType: 0
