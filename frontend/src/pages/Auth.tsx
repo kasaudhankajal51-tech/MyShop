@@ -9,6 +9,7 @@ import { Eye, EyeOff, Mail, Lock, User, ArrowLeft, Sparkles, KeyRound, Briefcase
 import { InputOTP, InputOTPGroup, InputOTPSlot } from '@/components/ui/input-otp';
 // import { supabase } from '@/integrations/supabase/client';
 import { z } from 'zod';
+import api from '@/lib/api';
 
 const signUpSchema = z.object({
   fullName: z.string().min(2, 'Name must be at least 2 characters'),
@@ -107,17 +108,7 @@ export default function Auth() {
   const sendOTP = async (email: string) => {
     setLoading(true);
     try {
-      const response = await fetch('/api/users/forgot-password', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Failed to send OTP');
-      }
+      const { data } = await api.post('/users/forgot-password', { email });
 
       toast({
         title: 'OTP Sent!',
@@ -149,17 +140,7 @@ export default function Auth() {
 
     setLoading(true);
     try {
-      const response = await fetch('/api/users/verify-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: formData.email, otp: otpValue }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Invalid or expired OTP');
-      }
+      const { data } = await api.post('/users/verify-otp', { email: formData.email, otp: otpValue });
 
       toast({
         title: 'OTP Verified!',
@@ -184,21 +165,11 @@ export default function Auth() {
 
     setLoading(true);
     try {
-      const response = await fetch('/api/users/reset-password', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: formData.email,
-          otp: otpValue,
-          password: formData.password,
-        }),
+      const { data } = await api.post('/users/reset-password', {
+        email: formData.email,
+        otp: otpValue,
+        password: formData.password,
       });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Failed to reset password');
-      }
 
       toast({
         title: 'Password Reset Successful!',
@@ -624,7 +595,7 @@ export default function Auth() {
                             </div>
                         </div>
                         <a
-                            href="/api/users/google/retail"
+                            href={`${import.meta.env.VITE_API_URL || ''}/api/users/google/retail`}
                             className="w-full h-16 inline-flex items-center justify-center gap-4 border border-border/60 rounded-none text-[10px] font-bold tracking-[0.3em] uppercase hover:bg-secondary/5 transition-all"
                         >
                             <svg className="h-4 w-4" aria-hidden="true" viewBox="0 0 24 24">
