@@ -64,7 +64,7 @@ export function DynamicCategories() {
               <Link
                 key={category.id}
                 to={category.href}
-                className="group relative overflow-hidden aspect-[4/3] md:aspect-[16/9] bg-secondary/10"
+                className="group relative overflow-hidden aspect-[4/3] md:aspect-[16/9] bg-secondary/10 rounded-2xl border border-border/50 shadow-sm hover:shadow-xl transition-all duration-500"
               >
                  {category.image ? (
                     <img 
@@ -76,16 +76,19 @@ export function DynamicCategories() {
                     <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-20`} />
                 )}
                 
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent transition-all duration-500" />
                 
-                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-                  <h3 className="text-2xl md:text-3xl text-white font-bold tracking-wide mb-2">
-                    {category.title}
-                  </h3>
-                  <div className="overflow-hidden">
-                    <span className="inline-block text-xs font-semibold uppercase text-white/95 border-b border-white/50 pb-1 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                        View Collection
-                    </span>
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 flex items-end justify-between z-10">
+                  <div className="space-y-1 text-left">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-secondary">
+                      {category.subtitle || 'Explore Now'}
+                    </p>
+                    <h3 className="text-xl md:text-2xl text-white font-bold tracking-wide">
+                      {category.title}
+                    </h3>
+                  </div>
+                  <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white group-hover:bg-primary group-hover:border-primary transition-all duration-300 transform translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100">
+                    <ArrowUpRight className="h-5 w-5" />
                   </div>
                 </div>
               </Link>
@@ -98,11 +101,12 @@ export function DynamicCategories() {
             <Link
               key={item.title}
               to={item.href}
-              className="group relative flex flex-col items-center p-8 bg-card border border-border/40 hover:border-primary/20 transition-all duration-500 overflow-hidden"
+              className="group relative flex flex-col items-center p-8 bg-card rounded-2xl border border-border/50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
-              <div className="absolute top-0 left-0 w-full h-1 bg-primary/10 group-hover:bg-primary/40 transition-colors" />
-              <item.icon className="h-6 w-6 text-primary mb-4 group-hover:scale-110 transition-transform" />
-              <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-foreground group-hover:text-primary transition-colors text-center">
+              <div className="w-12 h-12 rounded-full bg-primary/5 flex items-center justify-center mb-4 group-hover:bg-primary transition-all duration-300">
+                <item.icon className="h-5 w-5 text-primary group-hover:text-white transition-colors" />
+              </div>
+              <span className="text-xs font-semibold tracking-wider uppercase text-foreground group-hover:text-primary transition-colors text-center">
                 {item.title}
               </span>
             </Link>
