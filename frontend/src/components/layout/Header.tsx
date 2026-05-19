@@ -47,6 +47,7 @@ export function Header() {
             {[
               { label: 'WOMEN', href: '/products?category=women' },
               { label: 'MEN', href: '/products?category=men' },
+              { label: 'KIDS', href: '/products?category=kids' },
               { label: 'NEW ARRIVALS', href: '/products?new=true' },
             ].map((item) => (
               <Link
@@ -151,6 +152,7 @@ export function Header() {
             { label: 'WINTER COLLECTION', href: '/products?season=winter' },
             { label: 'WOMEN', href: '/products?category=women' },
             { label: 'MEN', href: '/products?category=men' },
+            { label: 'KIDS', href: '/products?category=kids' },
             { label: 'VIEW ALL', href: '/products' },
           ].map((item) => (
             <Link

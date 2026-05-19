@@ -5,7 +5,7 @@ export interface Product {
   price: number;
   originalPrice?: number;
   description: string;
-  category: 'men' | 'women';
+  category: 'men' | 'women' | 'kids';
   season: 'summer' | 'winter';
   subcategory?: string; // Made optional as per instruction
   sizes: string[];
@@ -304,7 +304,8 @@ export const categories = [
   { id: "summer", name: "Summer Collection", icon: "☀️" },
   { id: "winter", name: "Winter Collection", icon: "❄️" },
   { id: "men", name: "Men", icon: "👔" },
-  { id: "women", name: "Women", icon: "👗" }
+  { id: "women", name: "Women", icon: "👗" },
+  { id: "kids", name: "Kids", icon: "👶" }
 ];
 
 export const subcategories = [

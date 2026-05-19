@@ -183,6 +183,15 @@ export default function Products() {
       };
     }
 
+    if (category === 'kids') {
+      return {
+        title: "Kids' Collection",
+        subtitle: "PLAYFUL & COMFORTABLE",
+        description: "Explore our delightful collection of clothing for kids. Vibrant designs and soft fabrics crafted for comfort and fun.",
+        image: "https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&q=80&w=2000"
+      };
+    }
+
     if (season === 'summer') {
       return {
         title: "Summer '24",

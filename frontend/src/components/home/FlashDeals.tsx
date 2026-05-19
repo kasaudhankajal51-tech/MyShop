@@ -44,16 +44,27 @@ export function FlashDeals() {
 
   const fetchDeals = async () => {
     try {
-      const { data } = await api.get('/products');
-      // Handle paginated response or array
-      const productsData = data.products || data || [];
+      const { data } = await api.get('/flashdeals');
+      const activeDeals = (data || []).filter((d: any) => d.isActive);
       
-      // Filter products with compareAtPrice > 0 and compareAtPrice > price
-      const deals = productsData.filter((p: DbProduct) => 
-        p.compareAtPrice && p.compareAtPrice > 0 && p.compareAtPrice > p.price
-      ).slice(0, 4);
+      const mappedDeals = activeDeals.map((d: any) => ({
+        _id: d._id,
+        name: d.title,
+        description: d.subtitle || '',
+        price: d.discountPrice || 0,
+        originalPrice: d.originalPrice || 0,
+        image: d.image,
+        images: [d.image],
+        slug: d.link ? d.link.replace('/product/', '').replace(/^\//, '') : d._id,
+        category: 'Flash Deal',
+        rating: 5,
+        numReviews: 12,
+        isFeatured: true,
+        sizes: ['One Size'],
+        colors: [],
+      }));
       
-      setProducts(deals);
+      setProducts(mappedDeals);
     } catch (error) {
       console.error('Error fetching deals:', error);
     } finally {

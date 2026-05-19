@@ -36,7 +36,7 @@ interface Product {
   originalPrice?: number; // Mapped from compare_at_price
   description: string;
   season: 'summer' | 'winter';
-  category: 'men' | 'women'; // Changed from gender effectively
+  category: 'men' | 'women' | 'kids'; // Changed from gender effectively
   countInStock: number;
   isFeatured?: boolean;
   isBestSeller?: boolean;
@@ -318,6 +318,7 @@ export default function AdminProducts() {
                     >
                       <option value="men">Men</option>
                       <option value="women">Women</option>
+                      <option value="kids">Kids</option>
                     </select>
                   </div>
                 </div>

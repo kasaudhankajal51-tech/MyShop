@@ -53,6 +53,7 @@ export function ProductFilters({
       options: [
         { value: 'women', label: 'Women' },
         { value: 'men', label: 'Men' },
+        { value: 'kids', label: 'Kids' },
       ],
       selected: filters.category,
       onChange: (value) => onFilterChange('category', value),
