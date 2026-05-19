@@ -54,9 +54,9 @@ export function DynamicCategories() {
     <section className="py-24 bg-background">
       <div className="container">
         <div className="flex flex-col items-center mb-16 text-center">
-            <h2 className="text-sm font-bold tracking-[0.4em] uppercase text-secondary mb-4">Curated Selections</h2>
-            <h3 className="text-3xl md:text-5xl font-display font-medium tracking-tight">SHOP BY CATEGORY</h3>
-            <div className="h-px w-20 bg-primary/20 mt-6" />
+            <h2 className="text-xs md:text-sm font-semibold uppercase text-secondary mb-2">Curated Selections</h2>
+            <h3 className="text-2xl md:text-3xl font-bold tracking-tight">Shop By Category</h3>
+            <div className="h-0.5 w-16 bg-primary/20 mt-4" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -79,11 +79,11 @@ export function DynamicCategories() {
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500" />
                 
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-8">
-                  <h3 className="font-display text-3xl md:text-5xl text-white tracking-wide mb-4 italic">
+                  <h3 className="text-2xl md:text-3xl text-white font-bold tracking-wide mb-2">
                     {category.title}
                   </h3>
                   <div className="overflow-hidden">
-                    <span className="inline-block text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-white/90 border-b border-white/50 pb-1 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                    <span className="inline-block text-xs font-semibold uppercase text-white/95 border-b border-white/50 pb-1 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
                         View Collection
                     </span>
                   </div>

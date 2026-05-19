@@ -143,38 +143,38 @@ export function FlashDeals() {
               <span className="text-[10px] font-bold tracking-[0.4em] uppercase text-foreground">Flash Selection</span>
             </div>
             
-            <h2 className="text-4xl md:text-6xl font-display font-medium mb-6 tracking-tight italic">
-              Limited <span className="text-primary not-italic font-bold">Offerings</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Limited Offerings
             </h2>
             
-             <p className="text-muted-foreground max-w-lg mb-12 text-sm font-medium tracking-wide leading-relaxed opacity-80 uppercase">
+             <p className="text-muted-foreground max-w-lg mb-8 text-sm md:text-base leading-relaxed">
               Exclusive styles curated for a brief moment in time.
             </p>
-
+ 
             {/* Premium Timer - Minimalist Editorial Style */}
-            <div className="flex items-center gap-8 md:gap-16 mb-12">
+            <div className="flex items-center gap-6 md:gap-12 mb-8">
               <div className="flex flex-col items-center">
-                <span className="text-5xl md:text-7xl font-display font-light text-primary tabular-nums tracking-tighter">{timeLeft.hours.toString().padStart(2, '0')}</span>
-                <span className="text-[9px] text-muted-foreground uppercase tracking-[0.5em] font-black mt-2">Hours</span>
+                <span className="text-4xl md:text-5xl font-bold text-primary tabular-nums">{timeLeft.hours.toString().padStart(2, '0')}</span>
+                <span className="text-[10px] text-muted-foreground uppercase font-semibold mt-1">Hours</span>
               </div>
-              <div className="text-4xl font-display font-thin text-secondary/30 pb-8">:</div>
+              <div className="text-3xl font-light text-muted-foreground pb-4">:</div>
               <div className="flex flex-col items-center">
-                <span className="text-5xl md:text-7xl font-display font-light text-primary tabular-nums tracking-tighter">{timeLeft.minutes.toString().padStart(2, '0')}</span>
-                <span className="text-[9px] text-muted-foreground uppercase tracking-[0.5em] font-black mt-2">Mins</span>
+                <span className="text-4xl md:text-5xl font-bold text-primary tabular-nums">{timeLeft.minutes.toString().padStart(2, '0')}</span>
+                <span className="text-[10px] text-muted-foreground uppercase font-semibold mt-1">Mins</span>
               </div>
-              <div className="text-4xl font-display font-thin text-secondary/30 pb-8">:</div>
+              <div className="text-3xl font-light text-muted-foreground pb-4">:</div>
               <div className="flex flex-col items-center">
-                <span className="text-5xl md:text-7xl font-display font-light text-secondary tabular-nums tracking-tighter">{timeLeft.seconds.toString().padStart(2, '0')}</span>
-                <span className="text-[9px] text-muted-foreground uppercase tracking-[0.5em] font-black mt-2">Secs</span>
+                <span className="text-4xl md:text-5xl font-bold text-secondary tabular-nums">{timeLeft.seconds.toString().padStart(2, '0')}</span>
+                <span className="text-[10px] text-muted-foreground uppercase font-semibold mt-1">Secs</span>
               </div>
             </div>
             
              <Link 
                 to="/products?flash_deal=true"
-                className="group flex items-center gap-4 text-xs font-bold uppercase tracking-[0.3em] text-foreground hover:text-primary transition-all duration-500"
+                className="group flex items-center gap-3 text-sm font-semibold text-foreground hover:text-primary transition-all duration-300"
             >
                 View Collection
-                <div className="w-12 h-px bg-primary/40 group-hover:w-20 transition-all duration-500" />
+                <div className="w-8 h-px bg-primary/40 group-hover:w-12 transition-all duration-300" />
             </Link>
         </div>
 

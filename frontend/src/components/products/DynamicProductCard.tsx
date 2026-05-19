@@ -214,7 +214,7 @@ export function DynamicProductCard({ product, showRank, variant = 'default' }: D
                 <p className="text-[10px] tracking-[0.2em] text-muted-foreground uppercase font-bold">
                     {product.category || 'Collection'}
                 </p>
-                <h3 className="font-medium text-sm md:text-base leading-tight group-hover:text-primary transition-colors line-clamp-1 italic">
+                <h3 className="font-medium text-sm md:text-base leading-tight group-hover:text-primary transition-colors line-clamp-1">
                     {product.name}
                 </h3>
             </div>

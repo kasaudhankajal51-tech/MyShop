@@ -117,28 +117,28 @@ export default function DynamicBanners() {
         <div className="max-w-4xl space-y-8 px-4">
           <div key={currentIndex} className="space-y-4">
               {currentBanner.subtitle && (
-                <p className="animate-slide-up text-xs md:text-sm font-bold tracking-[0.5em] uppercase text-white/90 mb-4 block">
+                <p className="animate-slide-up text-xs md:text-sm font-semibold tracking-wider uppercase text-white/90 mb-3 block">
                   {currentBanner.subtitle}
                 </p>
               )}
               <h2 
-                className="animate-slide-up text-4xl md:text-7xl lg:text-8xl font-display font-medium text-white tracking-tight leading-none italic"
+                className="animate-slide-up text-3xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-none"
                 style={{ animationDelay: '0.1s' }}
               >
                 {currentBanner.title}
               </h2>
               <div 
-                className="mx-auto h-px w-24 bg-secondary/80 mt-8 animate-scale-in"
+                className="mx-auto h-0.5 w-16 bg-white/80 mt-6 animate-scale-in"
                 style={{ animationDelay: '0.3s' }}
               />
           </div>
           
           {currentBanner.link && (
-            <div className="animate-slide-up pt-4" style={{ animationDelay: '0.4s' }}>
+            <div className="animate-slide-up pt-2" style={{ animationDelay: '0.4s' }}>
                 <Link to={currentBanner.link}>
                 <Button 
-                    size="lg" 
-                    className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-primary rounded-none px-12 py-8 text-xs font-bold tracking-[0.3em] uppercase transition-all duration-500"
+                    size="default" 
+                    className="bg-transparent text-white border border-white hover:bg-white hover:text-primary transition-all duration-300 px-8 py-6 text-sm font-semibold uppercase tracking-wider"
                 >
                     Discover Now
                 </Button>

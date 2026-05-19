@@ -233,17 +233,17 @@ export default function Products() {
                     <span>Collection</span>
                 </nav>
                 
-                <span className="text-[10px] md:text-xs font-bold tracking-[0.6em] uppercase mb-4 animate-fade-in-up [animation-delay:200ms]">
+                <span className="text-xs md:text-sm font-semibold uppercase mb-3 tracking-wider text-white/95 animate-fade-in-up [animation-delay:200ms]">
                     {categoryDetails.subtitle}
                 </span>
                 
-                <h1 className="text-5xl md:text-8xl font-display font-medium mb-8 tracking-tight italic animate-fade-in-up [animation-delay:400ms]">
-                    {categoryDetails.title.split(' ')[0]} <span className="not-italic font-bold">{categoryDetails.title.split(' ').slice(1).join(' ')}</span>
+                <h1 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight animate-fade-in-up [animation-delay:400ms]">
+                    {categoryDetails.title}
                 </h1>
                 
-                <div className="h-px w-24 bg-white/40 mb-8 animate-fade-in-up [animation-delay:600ms]" />
+                <div className="h-0.5 w-16 bg-white/60 mb-6 animate-fade-in-up [animation-delay:600ms]" />
                 
-                <p className="text-xs md:text-sm font-medium tracking-widest text-white/80 max-w-xl leading-relaxed animate-fade-in-up [animation-delay:800ms]">
+                <p className="text-sm md:text-base text-white/90 max-w-xl leading-relaxed animate-fade-in-up [animation-delay:800ms]">
                     {categoryDetails.description}
                 </p>
             </div>
