@@ -45,7 +45,11 @@ export function DynamicCategories() {
         description: cat.description || `Discover our ${cat.name} collection`,
         icon: index % 2 === 0 ? Sun : Snowflake,
         href: `/products?category=${cat.slug}`,
-        gradient: index % 2 === 0 ? 'from-primary/80 via-primary/60 to-accent/60' : 'from-slate-800 via-slate-700 to-slate-600',
+        gradient: index % 3 === 0 
+          ? 'from-primary/95 via-primary/85 to-secondary/75' 
+          : index % 3 === 1 
+            ? 'from-accent/95 via-accent/85 to-secondary/75' 
+            : 'from-slate-900 via-slate-800 to-secondary/75',
         image: cat.image,
       }))
     : defaultCategories;
@@ -64,17 +68,16 @@ export function DynamicCategories() {
               <Link
                 key={category.id}
                 to={category.href}
-                className="group relative overflow-hidden aspect-[4/3] md:aspect-[16/9] bg-secondary/10 rounded-2xl border border-border/50 shadow-sm hover:shadow-xl transition-all duration-500"
+                className={`group relative overflow-hidden aspect-[4/3] md:aspect-[16/9] rounded-2xl border border-border/50 shadow-sm hover:shadow-xl transition-all duration-500 bg-gradient-to-br ${category.gradient}`}
               >
-                 {category.image ? (
+                 {category.image && (
                     <img 
                         src={category.image} 
                         alt={category.title} 
                         className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]"
+                        onError={(e) => { e.currentTarget.style.display = 'none'; }}
                     />
-                ) : (
-                    <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-20`} />
-                )}
+                 )}
                 
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-transparent transition-all duration-500" />
                 
